@@ -13,10 +13,10 @@ rel = set([x.lower() for x in rel])  # Convert it into a set
 
 
 # DEFINITION OF HAS_RELIG():
-def has_relig(list):
+def has_relig(rel_list):
     """Returns x>1 if the keyword list contains any religion entity."""
     try:
-        kws = set(list)
+        kws = set(rel_list)
         kws = set([x.lower() for x in kws])
         length = len(rel.intersection(kws))
         return length

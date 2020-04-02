@@ -59,9 +59,7 @@ def predict():
     elif(score >=0.800 and score <= 1):
         prediction = "fake"
 
-    message = '''The model has classified this news as \"{}\". 
-    The title of this news has  \"{}\" emotion, and the text has a \"{}\" emotion. 
-    The text seems to be a \"{}\", and has been classified as \"{}\", and the title seems sentimentally \"{}\".'''.format(prediction,title_emotion_resp,text_emotion_resp,intent_resp,taxonomy,sentiment_resp)
+    message = "The model has classified this news as \"{}\". The title of this news has  \"{}\" emotion, and the text has a \"{}\" emotion. The text seems to be a \"{}\", and has been classified as \"{}\", and the title seems sentimentally \"{}\".".format(prediction,title_emotion_resp,text_emotion_resp,intent_resp,taxonomy,sentiment_resp)
 
     votes = '''Random Forest classified it as \"{}\", Logistic Regression classified it as \"{}\", Naive Bayes classified it as \"{}\".
     The master neural network classified it as \"{}\"'''.format(vote_3,vote_2,vote_1,vote_4)
@@ -77,4 +75,4 @@ def predict():
                            text=text)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
