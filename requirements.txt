@@ -20,7 +20,6 @@ catalogue==1.0.0
 certifi==2019.11.28
 cffi==1.14.0
 chardet==3.0.4
-Click==7.0
 clyent==1.2.2
 colorama==0.4.3
 crypto==1.4.1
