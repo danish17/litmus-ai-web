@@ -5,7 +5,7 @@ from paralleldots import set_api_key
 from src import nlp_custom
 from src import api_call
 from src import custom_encoder
-from keras import models
+from src import models
 
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
