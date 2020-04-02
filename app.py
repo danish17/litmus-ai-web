@@ -1,4 +1,3 @@
-import numpy as np
 from flask import Flask, request, render_template, jsonify
 from src import predict as main_app
 

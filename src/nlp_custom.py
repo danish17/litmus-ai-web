@@ -1,4 +1,3 @@
-import traceback
 import language_check
 import pandas as pd
 
@@ -14,7 +13,7 @@ rel = set([x.lower() for x in rel])  # Convert it into a set
 
 #DEFINITION OF HAS_RELIG():
 def has_relig(list):
-    '''Returns x>1 if the keyword list contains any religion entity'''
+    '''Returns x>1 if the keyword list contains any religion entity.'''
     try:
         kws = set(list)
         kws = set([x.lower() for x in kws])
@@ -26,7 +25,7 @@ def has_relig(list):
 
 #DEFINTION OF HAS_BAIT():
 def has_bait(string):
-    '''Returns x>1 if the title contains any clickbait entity'''
+    '''Returns x>1 if the title contains any clickbait entity.'''
     try:
         words_in_text = set(string.split())
         int_len = len(clickbait.intersection(words_in_text))
@@ -37,7 +36,7 @@ def has_bait(string):
 
 #DEFINTION OF GET_LENGTH():
 def get_length(string):
-    '''Returns the length of a string'''
+    '''Returns the length of a string.'''
     try:
         string = string.split()
         return len(string)

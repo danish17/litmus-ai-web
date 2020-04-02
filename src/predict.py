@@ -2,12 +2,11 @@ import pickle
 import pandas as pd
 import numpy as np
 import language_check
-from paralleldots import set_api_key,get_api_key,emotion,sentiment,intent,abuse,taxonomy,usage,keywords
+from paralleldots import set_api_key
 from src import nlp_custom
 from src import api_call
 from src import custom_encoder
 from tensorflow.keras import models
-import traceback
 
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
