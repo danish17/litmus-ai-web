@@ -46,9 +46,6 @@ statsmodels==0.10.1
 tensorboard==2.1.0
 tensorflow==2.1.0
 tensorflow-estimator==2.1.0
-tensorflow-gpu==2.1.0
-tensorflow-gpu-estimator==2.1.0
 urllib3==1.25.8
 webencodings==0.5.1
 Werkzeug==1.0.0
-xgboost==1.0.2
