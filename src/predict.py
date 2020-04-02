@@ -1,7 +1,6 @@
 import pickle
 import pandas as pd
 import numpy as np
-import language_check
 from paralleldots import set_api_key
 from src import nlp_custom
 from src import api_call
@@ -10,8 +9,6 @@ from keras import models
 
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-
-tool = language_check.LanguageTool('en-US')
 
 clickbait = pd.read_csv('datasets/clickbaits.csv')  # Load the dataset containing potential clickbait words
 clickbait = list(clickbait['Word'])  # Convert it into list

@@ -1,7 +1,7 @@
-import language_check
 import pandas as pd
+import pickle
 
-tool = language_check.LanguageTool('en-US')
+tool = pickle.load(open("models/language_tool.cls","rb"))
 
 clickbait = pd.read_csv('datasets/clickbaits.csv')  # Load the dataset containing potential clickbait words
 clickbait = list(clickbait['Word'])  # Convert it into list
