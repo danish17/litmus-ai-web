@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template
 from src import predict as main_app
 
 app = Flask(__name__, static_url_path="/static")
@@ -63,7 +63,7 @@ def predict():
     The title of this news has  \"{}\" emotion, and the text has a \"{}\" emotion. 
     The text seems to be a \"{}\", and has been classified as \"{}\", and the title seems sentimentally \"{}\".'''.format(prediction,title_emotion_resp,text_emotion_resp,intent_resp,taxonomy,sentiment_resp)
 
-    votes = '''Random Forest classified it as \"{}\", Logistic Regression classified it as \"{}\", Naive Bayes classified it as \"{}\".\n 
+    votes = '''Random Forest classified it as \"{}\", Logistic Regression classified it as \"{}\", Naive Bayes classified it as \"{}\".
     The master neural network classified it as \"{}\"'''.format(vote_3,vote_2,vote_1,vote_4)
 
     alert = "Are you sure that this is a news article? The machine doesn't think so! The results may be unexpected." if intent_resp != "news" else " "

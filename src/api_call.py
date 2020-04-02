@@ -11,7 +11,7 @@ from paralleldots import emotion,sentiment,intent,abuse,taxonomy,keywords
 # clickbaits = set(clickbaits)
 
 def get_emotion(string):
-    '''Returns emotion and emotion score of a string as a PD Series.'''
+    """Returns emotion and emotion score of a string as a PD Series."""
     try:
         title_emotion = emotion(string)
         title_emotion = (sorted(((title_emotion['emotion']).items()), key=lambda kv: (kv[1], kv[0]), reverse=True))[0]
@@ -23,7 +23,7 @@ def get_emotion(string):
         print("Error in ", string)
 
 def get_intent(string):
-    '''Returns intent and intent score of a string as a PD Series.'''
+    """Returns intent and intent score of a string as a PD Series."""
     try:
         title_intent = intent(string)
         title_intent['intent'].pop('feedback')
@@ -37,7 +37,7 @@ def get_intent(string):
 
 
 def get_taxo(string):
-    '''Returns taxonomy and confidence score of a string as a PD Series.'''
+    """Returns taxonomy and confidence score of a string as a PD Series."""
     try:
         text_taxo = taxonomy(string)
         # text_taxo = (sorted(((text_taxo['taxonomy']).items()), key=lambda kv: (kv[1], kv[0]), reverse=True))[0]
@@ -49,7 +49,7 @@ def get_taxo(string):
         print("Error in ", string)
 
 def get_kw(string):
-    '''Return all the keywords in a string.'''
+    """Return all the keywords in a string."""
     try:
         keys = keywords(string)
         keys = keys['keywords']
@@ -95,7 +95,7 @@ def get_kw(string):
     #     print("Error encountered!")
 
 def get_abuse(string):
-    '''Returns abuse and abuse score of a string as a PD Series.'''
+    """Returns abuse and abuse score of a string as a PD Series."""
     try:
         text_abuse = abuse(string)
         text_abuse = (sorted(((text_abuse).items()), key=lambda kv: (kv[1], kv[0]), reverse=True))[0]
@@ -107,7 +107,7 @@ def get_abuse(string):
         print("Error in ", string)
 
 def get_sentiment(string):
-    '''Returns sentiment and sentiment score of a string as a PD Series.'''
+    """Returns sentiment and sentiment score of a string as a PD Series."""
     try:
         sent = sentiment(string)
         sent = (sorted(((sent['sentiment']).items()), key=lambda kv: (kv[1], kv[0]), reverse=True))[0]

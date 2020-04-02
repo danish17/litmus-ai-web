@@ -23,7 +23,7 @@ body{
 }
 
 iframe{
-    width:60vh !important;
+    width:60vh;
     height: 1303px;
     overflow: hidden;
 }
