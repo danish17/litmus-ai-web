@@ -1,4 +1,5 @@
 keras
+gunicorn
 Flask==1.1.1
 language-check==1.1
 numpy==1.18.1
