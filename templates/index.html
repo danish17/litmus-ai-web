@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/res/icon.png">
+    <link rel="stylesheet" href="../static/stylesheet.css">
+    <link rel="stylesheet" href="../static/menu_stylesheet.css">
+    <script src="https://kit.fontawesome.com/c3c845c2cd.js" crossorigin="anonymous"></script>
+    <script src = "../static/jQuery.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700;800&display=swap" rel="stylesheet">
+
+    <!--Form validation script lives here-->
+       <script>
+           function validateForm() {
+                var title = document.forms["user_form"]["title"].value;
+                var text = document.forms["user_form"]["text"].value;
+                 if (title == "") {
+                    alert("Please enter the title.");
+                    return false;
+            }
+                if (text == ""){
+                    alert("Please enter the text.");
+                    return false;
+                }
+}
+       </script>
+   
+   <!--Response hider lives here-->
+   <script>
+           var url = window.location.href;
+           console.log(url)
+           window.onload = function() {
+            if (!url.indexOf('predict') > -1) {
+                console.log("Does not");
+                document.querySelectorAll('#response')[0].style.opacity = 0;
+            } 
+            
+            if (url.indexOf('predict') > -1){
+                console.log("Does");
+                document.querySelectorAll('#response')[0].style.opacity = 1;
+                var prediction = document.getElementById("prediction");
+            }
+        };
+       </script>
+          
+    <!--Revealer lives here-->
+        <script>
+        var count = 0;
+        function reveal_alpha() {
+            count++;
+            var head = document.getElementById('header');
+            if(count%2 == 0){
+                head.innerHTML = "<img src=\"../static/res/400x400.png\" alt=\"Litmus Logo\" id=\"logo\"> litmus. <sup> <font size=6>alpha version</font></sup>";
+            }         
+            else{
+                head.innerHTML = "<img src=\"../static/res/400x400.png\" alt=\"Litmus Logo\" id=\"logo\"> litmus.<sup>α</sup>"
+            }
+        }
+             </script>
+    <title>Litmus-AI Fake News Detection Open-Source Project</title>
+</head>
+<body>
+
+    <!--Navigation bar code here:-->
+    <div class="tab-nav-container">
+    <div class="tab active purple">
+        <i class="fas fa-home"></i>
+        <a href="/">Home</a>
+    </div>
+    <div class="tab pink">
+        <i class="fas fa-code-branch"></i>
+        <a href="404">Contribute</a>
+    </div>
+    <div class="tab yellow">
+        <i class="fas fa-cog"></i>
+        <a href="404">How this works</a>
+    </div>
+    <div class="tab teal">
+        <i class="far fa-heart"></i>
+        <a href="form">Feedback</a>
+    </div>
+    </div>
+
+    <!--User input form section-->
+    <div id="fields">
+    <h1 id="header" ondblclick="reveal_alpha()"><img src="../static/res/400x400.png" alt="Litmus Logo" id="logo"> litmus.<sup>α</sup></h1>
+    <form id="user_form" autocomplete="off" action="/predict" method="post" >
+        <label for="title">Heading of the news</label><br>
+        <input type="text" name="title" id="title" class="title" style="font-family: 'Sans',sans-serif;" value="{{ title }}"></input><br>
+        <label for="text">Body of the news</label><br>
+        <textarea id="text" name="text" class="text">{{ text }}</textarea>
+        <!-- <input type="submit" value="Predict" onclick="return check()"></input> -->
+        <input type="submit" value="Predict" onclick="return validateForm()"></input>
+    </form>
+    </div>
+    
+    <!--Prediction outpus section-->
+    <div id="response">
+        <h1 id="prediction">{{ prediction }}</h1>
+        <ul id="responses" type="none">
+        <li><div id="alert"> {{ alert }} </div></li>
+        <li><p id="feature">{{ message }}</p></li>
+        <li><p id="votes">{{ votes }}</p> </li> 
+        </ul>  
+    </div>
+
+    <!--The footer is here-->
+    <footer>
+    <a href="https://www.instagram.com/digital.sufi" target="_blank" id="logo_credits">Logo designed by Hanan @digital.sufi</a>
+    Built with <i class="far fa-heart"></i> by Danish Shakeel
+    <a href="https://www.danishshakeel.me" target="_blank">(View Profile)</a>
+    <a href="" id="license"><i class="fas fa-copyright">&emsp;</i>License: Apache 2.0</a>
+    </footer>
+</body>
+</html>

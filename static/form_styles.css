@@ -1,0 +1,126 @@
+html{
+    display: flex;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 2000%;
+    padding: 1% 2% 1% 2%;
+    animation-name: gradient;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+body{
+    width: 100%;
+}
+
+#form{
+    top:5%;
+    opacity: 0.95;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+iframe{
+    width:60vh !important;
+    height: 1303px;
+    overflow: hidden;
+}
+
+#header{
+    top: 5%;
+    position: relative;
+    cursor: pointer;
+    transition: 0.6s all ease-in-out;
+    color: white;
+    font-size: 8vh;
+    font-family: 'Sen', sans-serif;
+    user-select: none; 
+    margin-top: 0;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+.tab-nav-container {
+    transition: 0.3s all ease-in-out;
+    background-color: rgba(71, 71, 71, 0.63);
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+    left: 50%;
+    transform:translateX(-50%);
+    width: 90%;
+    height: 4vh;
+    top: 0px;
+    position: absolute;
+    font-family: 'Sens',sans-serif;
+}
+
+.tab-nav-container:hover{
+    transition: 0.3s all ease-in-out;
+    background-color: rgba(3, 3, 3, 0.849);
+}
+
+.tab {
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1% 0px 1%;
+    margin: 0 0 0 0;
+    transition: background 0.4s linear;
+}
+
+.tab i {
+    font-size: 1em;
+    color: white;
+    margin-right: 5px;
+}
+
+.tab a {
+    overflow: visible;
+    color: white;
+    text-emphasis: none;
+    text-decoration: none;
+}
+
+.tab a:hover {
+    transition: 0.3s all ease-in-out;
+    overflow: visible;
+    color: white;
+    text-decoration: underline;
+}
+
+
+
+/* @media (max-width: 450px) {
+    .tab-nav-container {
+        padding: 20px;
+        width: 80%;
+    }
+
+    .tab {
+        padding: 0 10px;
+        margin: 0;
+    }
+
+    .tab i {
+        font-size: 1em;
+    }
+} */

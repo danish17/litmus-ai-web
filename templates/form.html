@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback-Litmus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c3c845c2cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/form_styles.css">
+
+    <script>
+        var count = 0;
+        function reveal_alpha() {
+            count++;
+            var head = document.getElementById('header');
+            if(count%2 == 0){
+                head.innerHTML = "litmus. <sup> <font size=6>alpha version</font></sup>";
+            }         
+            else{
+                head.innerHTML = "litmus.<sup>α</sup></h1>"
+            }
+        }
+             </script>
+
+            
+</head>
+
+<body>
+    <!--Navigation bar code here:-->
+    
+    <div class="tab-nav-container">
+        <div class="tab active purple">
+            <i class="fas fa-home"></i>
+            <a href="index.html">Home</a>
+        </div>
+        <div class="tab pink">
+            <i class="fas fa-code-branch"></i>
+            <a href="">Contribute</a>
+        </div>
+        <div class="tab yellow">
+            <i class="fas fa-cog"></i>
+            <a href="">How this works</a>
+        </div>
+        <div class="tab teal">
+            <i class="far fa-heart"></i>
+            <a href="form.html">Feedback</a>
+        </div>
+        </div>
+
+    <h1 id="header" ondblclick="reveal_alpha()">litmus.<sup>α</sup></h1>
+    <div id="form">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfd5rG3QX7iQ_7qzHP_WdkqLS0P_t03nji8nV9yV3WXMBR96Q/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>    
+    </div> 
+</body>
+</html>
