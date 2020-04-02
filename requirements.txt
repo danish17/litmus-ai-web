@@ -5,6 +5,7 @@ gunicorn==19.9.0
 itsdangerous==1.1.0
 Flask==1.1.1
 numpy==1.18.1
+language-check
 numpydoc==0.9.2
 pandas==0.25.3
 ParallelDots==3.2.13
