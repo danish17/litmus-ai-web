@@ -4,8 +4,8 @@ import numpy as np
 from paralleldots import set_api_key
 from src import nlp_custom
 from src import api_call
-from tensorflow.keras import models
 from src import custom_encoder
+import tflite_runtime.interpreter as tflite
 
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
@@ -59,10 +59,32 @@ def parallel_ensemble(cooked_data):
     return cooked_data
 
 def dense_model(to_feed):
-    brain = models.load_model("models/ann.h5")
-    score = brain.predict(to_feed.reshape(1,-1))
+    # Load and allocate tensors
+    interpreter = tflite.Interpreter(model_path="models/ann_lite.tflite")
+    interpreter.allocate_tensors()
+
+    # Get input and output tensors
+    input_details = interpreter.get_input_details()
+    output_details = interpreter.get_output_details()
+
+    #Structuring because TFlite doesn't do that
+    input_shape = input_details[0]['shape']
+    input_data = to_feed.reshape(1,15).astype(np.float32)
+    interpreter.set_tensor(input_details[0]['index'], input_data)
+
+    interpreter.invoke()
+
+    tflite_results = interpreter.get_tensor(output_details[0]['index'])
+    score = tflite_results[0][0]
     to_feed = np.append(to_feed,score)
     return to_feed
+
+
+    #If you are using Tensorflow:
+    # brain = models.load_model("models/ann.h5")
+    # score = brain.predict(to_feed.reshape(1,-1))
+    # to_feed = np.append(to_feed,score)
+    # return to_feed
 
 def hybrid_ensemble(data):
     cooked_data = cook(data)
