@@ -20,12 +20,15 @@ def feedback():
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    ## title = "Omar questions domicile law for J&K"
+    # text = " Former Jammu and Kashmir Chief Minister Omar Abdullah questioned the “suspect timing” of the domicile rules defined by the centre amid  prevailing situation owing to Covid-19 outbreak. “Talk about suspect timing. At a time when all our efforts & attention should be focused on the #COVID outbreak the government slips in a new domicile law for J&K. Insult is heaped on injury when we see the law offers none of the protections that had been promised,” Omar wrote on Twitter. "
+    # api_key = "Fq0rdRKXqpPRoqyIoIN0oOyPpPo3WGtiuDMeRKwuwqM"
 
     title = request.form.get('title')
     text = request.form.get('text')
     text = text.replace("\r",'')
     text = text.replace("\n",'')
-    api_key = "7GSEWRla34IZ4zBY1jS3SzKroHoL5mdL9Q79di00aRY"
+    api_key = "Fq0rdRKXqpPRoqyIoIN0oOyPpPo3WGtiuDMeRKwuwqM"
 
     return_vals = main_app.pipeline(title,text,api_key)
 
