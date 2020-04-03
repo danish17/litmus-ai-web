@@ -14,4 +14,6 @@ Werkzeug>=1.0.0
 Jinja2>=2.10.1
 MarkupSafe>=1.1.1
 tflite==2.1.0
-tflite-runtime==2.1.0.post1
+dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp36-cp36m-macosx_10_14_x86_64.whl ; sys_platform == "darwin"
+dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp36-cp36m-linux_x86_64.whl ; sys_platform == "linux"
+dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp36-cp36m-win_amd64.whl ; sys_platform == "windows"
