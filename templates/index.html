@@ -7,20 +7,41 @@
     <meta http-equiv="Expires" content="0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../static/res/icon.png">
-    <link rel="stylesheet" href="../static/stylesheet.css">
-    <link rel="stylesheet" href="../static/menu_stylesheet.css">
+    <link rel="stylesheet" media="screen and (max-width: 1024px)" href="../static/mobile_stylesheet.css">
+    <link rel="stylesheet" media="screen and (min-width: 1024px)" href="../static/stylesheet.css">
+    <link rel="stylesheet" media="screen and (min-width: 1024px)" href="../static/menu_stylesheet.css">
     <script src="https://kit.fontawesome.com/c3c845c2cd.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77749243-4"></script>
-    
+
+<!--Tracking code-->
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'UA-77749243-4');
+    </script>
+
+    <!--Hamburger Script: Thanks to Erik Terwan @ Codepen.io-->
+    <script>
+        $('.show-menu').on('click',function(){
+        $('.menu').addClass('open').velocity({ top: 350 } , 600, [400, 25]);
+        $('.page').addClass('hidden').velocity({ scale: .85, opacity: .5 }, 500, [400, 25]);
+        });
+
+        $('.menu').on('click',function(e){
+        var title = $(e.target).text();
+        $('.menu').removeClass('open').velocity("reverse");
+        $('.page').removeClass('hidden').velocity("reverse");
+        if (title.length > 0 && title.length < 20) {
+        $('.headline').text( title ); 
+        }
+        });
+
     </script>
 
     <!--Form validation script lives here-->
@@ -70,12 +91,60 @@
                 head.innerHTML = "<img src=\"../static/res/400x400.png\" alt=\"Litmus Logo\" id=\"logo\"> litmus.<sup>α</sup>"
             }
         }
-             </script>
+        </script>
+
+    <!--Goto prediction for mobile-->
+    <script>
+        if(screen.width<=1024 && url.indexOf('predict') > -1){
+            var elmnt = document.getElementById("response");
+
+        window.onload = function scrollToTop() {
+        elmnt.scrollIntoView(true);
+        }
+        }
+    </script>
+
+
     <title>Litmus-AI Fake News Detection Open-Source Project</title>
 </head>
 <body>
 
-    <!--Navigation bar code here:-->
+    <!--Mobile Hamburger Grilled here: Thanks to Erik Tewan @ Codepen.io-->
+    <!--    Made by Erik Terwan    -->
+<!--   24th of November 2015   -->
+<!--        MIT License        -->
+<nav role="navigation">
+    <div id="menuToggle">
+      <!--
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+      -->
+      <input type="checkbox" />
+      
+      <!--
+      Some spans to act as a hamburger.
+      
+      They are acting like a real hamburger,
+      not that McDonalds stuff.
+      -->
+      <span></span>
+      <span></span>
+      <span></span>
+      
+      <!--
+      Too bad the menu has to be inside of the button
+      but hey, it's pure CSS magic.
+      -->
+      <ul id="menu">
+        <a href="/"><li>Home</li></a>
+        <a href="https://www.github.com/danish17/litmus-ai-web"><li>Contribute</li></a>
+        <a href="404"><li>How this works</li></a>
+        <a href="form"><li>Feedback</li></a>
+      </ul>
+    </div>
+  </nav>
+  
+    <!--Desktop Navigation bar code here:-->
     <div class="tab-nav-container">
     <div class="tab active purple">
         <i class="fas fa-home"></i>
@@ -123,7 +192,7 @@
     <a href="https://www.instagram.com/digital.sufi" target="_blank" id="logo_credits">Logo designed by Hanan @digital.sufi</a>
     Built with <i class="far fa-heart"></i> by Danish Shakeel
     <a href="https://www.danishshakeel.me" target="_blank">(View Profile)</a>
-    <a href="" id="license"><i class="fas fa-copyright">&emsp;</i>License: Apache 2.0</a>
+    <a href="" id="license"><i class="fas fa-copyright"></i>License: Apache 2.0</a>
     </footer>
 </body>
 </html>

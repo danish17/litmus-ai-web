@@ -1,0 +1,368 @@
+html{
+    background: #feffff;
+}
+
+body{
+    display: block;
+    height: 100%;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 1% 1% 1% 1%;
+}
+
+#fields{
+    position: relative;
+    width: 90%;
+    margin: 0 0 0 0;
+    height: 90%;
+}
+
+#header{
+    position: relative;
+    cursor: pointer;
+    transition: 0.6s all ease-in-out;
+    color: #312c32;
+    font-size: 5vh;
+    font-family: 'Sen', sans-serif;
+    user-select: none; 
+    margin-top: 0;
+}
+
+/*Mobile menu*/
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 10px;
+  left: 85%;
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #141414;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  font-family: 'Sens',sans-serif;
+  width: 100%;
+  margin: -100px 0 0 -95%;
+  padding: 10%;
+  padding-top: 125px;
+  
+  background: #312c32;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 3vh;
+  color: white;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+  
+#user_form{
+    font-size: 2.7vh;
+    font-family: 'Sens',sans-serif;
+    color: #312c32;
+}
+
+#user_form input, #user_form textarea{
+    border: solid 0.7px #312c32 !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+
+#user_form input#title{
+    transition: 0.3s all ease-in-out;
+    height: 4vh;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 10px 10px 10px;
+    font-size: 14px;
+    font-family: 'Sens',sans-serif;
+    opacity: 0.8;
+}
+
+#user_form textarea{
+    font-size: 14px;
+    transition: 0.3s all ease-in-out;
+    opacity: 0.8;
+    overflow: visible;
+    height: 40vh;
+    resize: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Sens',sans-serif;
+}
+
+#user_form input#title:focus{
+    outline: none;
+    transition: 0.3s all ease-in-out;
+    opacity: 1;
+    box-shadow: 5px 5px 20px #30303079;
+}
+
+#user_form #text:focus{
+    outline: none;
+    transition: 0.3s all ease-in-out;
+    opacity: 1;
+    box-shadow: 5px 5px 20px #30303079;
+}
+
+#user_form input[type='submit']{
+    opacity: 0.8;
+    transition: 0.3s all ease-in-out;
+    cursor: pointer;
+    width: 15vh;
+    height: 40px;
+    border: .05em solid #fff;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Sans',sans-serif;
+    font-weight: 500;
+    background-color: #312c32;
+    outline: none;
+}
+
+#user_form input[type='submit']:active{
+    transition: 0.3s all ease-in-out;
+    outline: none;
+    transform: translateY(3px);
+    background-color: #daad86;
+    box-shadow: 8px 8px 10px #30303079;
+    border: none !important;
+}
+
+#response{
+    word-wrap: normal;
+    display: block;
+    transition: 0.3s all ease-in-out;
+    margin: 0 0 0 0;
+    padding: 1% 1% 1% 1%;
+    width: 90%;
+    height: 65%;
+    background-color: #312c32;
+    border-radius: 2em;
+    color: white;
+    font-family: 'Sans',sans-serif;
+    position: relative;
+}
+
+#response #prediction{
+    top: 0%;
+    position: relative;
+    padding: 0 0 0 0;
+    font-size: 4vh;
+}
+
+#response ul#responses{
+    position: relative;
+    top: 30%;
+    font-family: 'Sens',sans-serif;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+#response #alert{
+    position: relative;
+    color: red;
+    font-size: 1.8vh;
+    max-width: 100%;
+}
+
+#response p#feature{
+    font-size: 1.8vh;
+    font-family: 'Sans',sans-serif;
+}
+
+#response #votes{
+    position: relative;
+    margin-top: 5%;
+    font-size: 1.8vh;
+    font-family: 'Sans',sans-serif;
+} 
+
+footer{
+    font-size: 2.2vh;
+    left: 50%;
+    transform:translateX(-50%);
+    width: 100%;
+    height:5%;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    left: 50%;
+    display: block;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: rgb(59, 59, 59);
+    text-align: center;
+    font-family: 'Sans',sans-serif;
+}
+
+
+
+footer a{
+    transition: 0.3s all ease-in-out;
+    color: rgb(59, 59, 59);
+    vertical-align: auto;
+}
+
+footer #license{
+    position: relative;
+    margin-top: 2px;
+    display: block;
+}
+
+#fields #logo{
+    transition: 0.3s all ease-in-out;
+    height: 5vh;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+footer #logo_credits{
+   display: none;
+}
+
+.tab-nav-container{
+    display: none;
+}
+
+#form{
+    top: 20%;
+    width:100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 0 0 0;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
