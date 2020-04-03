@@ -25,7 +25,6 @@ def predict():
     text = request.form.get('text')
     text = text.replace("\r",'')
     text = text.replace("\n",'')
-
     api_key = "7GSEWRla34IZ4zBY1jS3SzKroHoL5mdL9Q79di00aRY"
 
     return_vals = main_app.pipeline(title,text,api_key)
@@ -41,7 +40,7 @@ def predict():
     taxonomy = return_vals[3]
     sentiment_resp = return_vals[4]
 
-    score = (0.8*vote_1 + vote_2 + 0.6*vote_3 + 0.8*vote_4)/3.2
+    score = (0.8*vote_1 + 1.2*vote_2 + 0.6*vote_3 + 0.8*vote_4)/3.4
 
     vote_1 = "fake" if vote_1 >= 0.4 else "true"
     vote_2 = "fake" if vote_2 >= 0.4 else "true"

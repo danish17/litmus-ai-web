@@ -83,7 +83,7 @@
     </div>
     <div class="tab pink">
         <i class="fas fa-code-branch"></i>
-        <a href="404">Contribute</a>
+        <a href="https://www.github.com/danish17/litmus-ai-web" target="_blank">Contribute</a>
     </div>
     <div class="tab yellow">
         <i class="fas fa-cog"></i>
@@ -102,7 +102,7 @@
         <label for="title">Heading of the news</label><br>
         <input type="text" name="title" id="title" class="title" style="font-family: 'Sans',sans-serif;" value="{{ title }}"></input><br>
         <label for="text">Body of the news</label><br>
-        <textarea id="text" name="text" class="text">{{ text }}</textarea>
+        <textarea id="text" name="text" class="text" minlength="50" maxlength="2500">{{ text }}</textarea>
         <!-- <input type="submit" value="Predict" onclick="return check()"></input> -->
         <input type="submit" value="Predict" onclick="return validateForm()"></input>
     </form>

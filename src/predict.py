@@ -4,8 +4,8 @@ import numpy as np
 from paralleldots import set_api_key
 from src import nlp_custom
 from src import api_call
+from tensorflow.keras import models
 from src import custom_encoder
-from src import models
 
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
