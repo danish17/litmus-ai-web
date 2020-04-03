@@ -16,5 +16,3 @@ MarkupSafe>=1.1.1
 tflite==2.1.0
 https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp36-cp36m-linux_x86_64.whl ; sys_platform == "linux" ; python_version == '3.6'
 https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp36-cp36m-win_amd64.whl ; sys_platform == "windows" ; python_version == '3.6'
-https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-win_amd64.whl ; sys_platform == "windows" ; python_version == '3.7'
-https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_x86_64.whl ; sys_platform == "linux" ; python_version == '3.6'
