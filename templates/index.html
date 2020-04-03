@@ -98,7 +98,7 @@
     <!--User input form section-->
     <div id="fields">
     <h1 id="header" ondblclick="reveal_alpha()"><img src="../static/res/400x400.png" alt="Litmus Logo" id="logo"> litmus.<sup>α</sup></h1>
-    <form id="user_form" autocomplete="off" action="/predict" method="post" >
+    <form id="user_form" autocomplete="off" action="{{ url_for('predict')}}" method="post" >
         <label for="title">Heading of the news</label><br>
         <input type="text" name="title" id="title" class="title" style="font-family: 'Sans',sans-serif;" value="{{ title }}"></input><br>
         <label for="text">Body of the news</label><br>
