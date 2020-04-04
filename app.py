@@ -28,7 +28,7 @@ def predict():
     text = request.form.get('text')
     text = text.replace("\r",'')
     text = text.replace("\n",'')
-    api_key = "Fq0rdRKXqpPRoqyIoIN0oOyPpPo3WGtiuDMeRKwuwqM"
+    api_key = "7GSEWRla34IZ4zBY1jS3SzKroHoL5mdL9Q79di00aRY"
 
     return_vals = main_app.pipeline(title,text,api_key)
 
@@ -77,4 +77,4 @@ def predict():
                            text=text)
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=False, threaded=True)
