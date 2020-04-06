@@ -1,3 +1,17 @@
+"""Copyright 2020 Danish Shakeel
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License."""
+
 from flask import Flask, request, render_template
 from src import predict as main_app
 
@@ -20,9 +34,6 @@ def feedback():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    ## title = "Omar questions domicile law for J&K"
-    # text = " Former Jammu and Kashmir Chief Minister Omar Abdullah questioned the “suspect timing” of the domicile rules defined by the centre amid  prevailing situation owing to Covid-19 outbreak. “Talk about suspect timing. At a time when all our efforts & attention should be focused on the #COVID outbreak the government slips in a new domicile law for J&K. Insult is heaped on injury when we see the law offers none of the protections that had been promised,” Omar wrote on Twitter. "
-    # api_key = "Fq0rdRKXqpPRoqyIoIN0oOyPpPo3WGtiuDMeRKwuwqM"
 
     title = request.form.get('title')
     text = request.form.get('text')
@@ -43,7 +54,7 @@ def predict():
     taxonomy = return_vals[3]
     sentiment_resp = return_vals[4]
 
-    score = (0.8*vote_1 + 1.2*vote_2 + 0.6*vote_3 + 0.8*vote_4)/3.4
+    score = (0.8*vote_1 + 1.3*vote_2 + 0.6*vote_3 + 0.8*vote_4)/3.5
 
     vote_1 = "fake" if vote_1 >= 0.4 else "true"
     vote_2 = "fake" if vote_2 >= 0.4 else "true"

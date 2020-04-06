@@ -1,3 +1,19 @@
+<!--/*
+Copyright 2020 Danish Shakeel
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +63,7 @@
     <!--Alert-->
     <script>
         $(document).ready(function(){
-            alert("Hello! This project is still in its infancy, and the accuracy of the model is low. Please use this model as a testing platform, and test it with actual pieces of true or fake news. We would be happy to receive your suggestions.");
+            alert("Hello! This project is still in its infancy, and the accuracy of the model is low. Please use this model as a testing platform, and test it with actual pieces of true or fake news. Moreover, this model is trained on actual fake news articles, and may misbehave on unexpected inputs. I would be happy to receive your suggestions at hi@danishshakeel.me.");
         });
     </script>
     <!--Form validation script lives here-->
@@ -104,9 +120,7 @@
         if(screen.width<=1024 && url.indexOf('predict') > -1){
             var elmnt = document.getElementById("response");
 
-        window.onload = function scrollToTop() {
-        elmnt.scrollIntoView(true);
-        }
+        window.onload = elmnt.scrollIntoView(true);
         }
     </script>
 
@@ -177,7 +191,7 @@
         <label for="title">Heading of the news</label><br>
         <input type="text" name="title" id="title" class="title" style="font-family: 'Sans',sans-serif;" value="{{ title }}"></input><br>
         <label for="text">Body of the news</label><br>
-        <textarea id="text" name="text" class="text" minlength="50" maxlength="2500">{{ text }}</textarea>
+        <textarea id="text" name="text" class="text" minlength="250" maxlength="2500">{{ text }}</textarea>
         <!-- <input type="submit" value="Predict" onclick="return check()"></input> -->
         <input type="submit" value="Predict" onclick="return validateForm()"></input>
     </form>

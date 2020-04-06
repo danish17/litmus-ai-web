@@ -6,8 +6,8 @@
 Fake news is one of the most serious issues that our society faces today.
 Litmus AI aims to detect fake news using artificial intelligence.
 
-<u>Notable contributions:</u>
-Avinash Deshwal, Chandigarh University <br>
-Namit Raj, Chandigarh University <br>
-Jyotsana Verma, Chandigarh University <br> 
-Neha Garg, Chandigarh University <br>
+<u>Notable contributions:</u><br>
+Avinash Deshwal, Chandigarh University, for helping with pre-processing the data.<br>
+Namit Raj, Chandigarh University, for helping with the natural language features visualization.<br>
+Jyotsana Verma, Chandigarh University, for helping with ADD and report documentation. <br> 
+Neha Garg, Chandigarh University, for helping with ADD and report documentation. <br>
